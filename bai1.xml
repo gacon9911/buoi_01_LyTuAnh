@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thuvien>
+  <sach>
+    <tieude>Đắc Nhân Tâm</tieude>
+    <tacgia>Dale Carnegie</tacgia>
+    <namxuatban>1936</namxuatban>
+    <theloai>Kỹ năng sống</theloai>
+  </sach>
+  <sach>
+    <tieude>Tuổi Trẻ Đáng Giá Bao Nhiêu</tieude>
+    <tacgia>Rosie Nguyễn</tacgia>
+    <namxuatban>2016</namxuatban>
+    <theloai>Truyền cảm hứng</theloai>
+  </sach>
+  <sach>
+    <tieude>Harry Potter và Hòn Đá Phù Thủy</tieude>
+    <tacgia>J.K. Rowling</tacgia>
+    <namxuatban>1997</namxuatban>
+    <theloai>Giả tưởng</theloai>
+  </sach>
+</thuvien>
