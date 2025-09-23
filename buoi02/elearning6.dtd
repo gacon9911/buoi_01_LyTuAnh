@@ -1,0 +1,28 @@
+<!ELEMENT elearning (course:course+)>
+<!ATTLIST elearning
+    xmlns:course     CDATA #FIXED "http://example.com/course"
+    xmlns:instructor CDATA #FIXED "http://example.com/instructor"
+    xmlns:student    CDATA #FIXED "http://example.com/student">
+
+<!-- Course -->
+<!ELEMENT course:course (course:title, instructor:instructor, course:students)>
+<!ATTLIST course:course
+    id ID #REQUIRED
+    category CDATA #REQUIRED>
+
+<!ELEMENT course:title (#PCDATA)>
+<!ELEMENT course:students (student:student+)>
+
+<!-- Instructor -->
+<!ELEMENT instructor:instructor (instructor:name, instructor:email)>
+<!ATTLIST instructor:instructor
+    id ID #REQUIRED>
+<!ELEMENT instructor:name (#PCDATA)>
+<!ELEMENT instructor:email (#PCDATA)>
+
+<!-- Student -->
+<!ELEMENT student:student (student:name)>
+<!ATTLIST student:student
+    id ID #REQUIRED
+    progress CDATA #REQUIRED>
+<!ELEMENT student:name (#PCDATA)>
