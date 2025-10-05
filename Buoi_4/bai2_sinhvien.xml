@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSSV xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="sinhvien.xsd">
+
+    <KHOA>
+        <MA>K01</MA>
+        <TEN>cntt</TEN>
+    </KHOA>
+    <KHOA>
+        <MA>K02</MA>
+        <TEN>toanhoc</TEN>
+    </KHOA>
+
+    <LOP>
+        <MA>L01</MA>
+        <TEN>Lập trình C</TEN>
+        <KHOA_REF>K01</KHOA_REF>
+    </LOP>
+    <LOP>
+        <MA>L02</MA>
+        <TEN>Toán rời rạc</TEN>
+        <KHOA_REF>K02</KHOA_REF>
+    </LOP>
+
+    <SINHVIEN>
+        <MSSV>SV001</MSSV>
+        <HOTEN>Nguyễn Văn A</HOTEN>
+        <EMAIL>nguyenvana@example.com</EMAIL>
+        <DIACHI>123 Đường ABC</DIACHI>
+        <SDT>0123456789</SDT>
+        <LOP_REF>L01</LOP_REF>
+    </SINHVIEN>
+    <SINHVIEN>
+        <MSSV>SV002</MSSV>
+        <HOTEN>Trần Thị B</HOTEN>
+        <EMAIL>tranthib@example.com</EMAIL>
+        <DIACHI>456 Đường XYZ</DIACHI>
+        <SDT>0987654321</SDT>
+        <LOP_REF>L02</LOP_REF>
+    </SINHVIEN>
+
+</DSSV>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QUANAN xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.quanan.vn"
+        xsi:schemaLocation="http://www.quanan.vn quanan.xsd">
+
+  <!-- Bảng BAN -->
+  <BAN>
+    <TENBAN>B01</TENBAN>
+    <SOBAN>1</SOBAN>
+  </BAN>
+  <BAN>
+    <TENBAN>B02</TENBAN>
+    <SOBAN>2</SOBAN>
+  </BAN>
+  <BAN>
+    <TENBAN>B03</TENBAN>
+    <SOBAN>3</SOBAN>
+  </BAN>
+  <BAN>
+    <TENBAN>B04</TENBAN>
+    <SOBAN>4</SOBAN>
+  </BAN>
+  <BAN>
+    <TENBAN>B05</TENBAN>
+    <SOBAN>5</SOBAN>
+  </BAN>
+
+  <!-- Bảng NHANVIEN -->
+  <NHANVIEN>
+    <MANV>NV01</MANV>
+    <TENNV>Nguyễn Văn A</TENNV>
+    <SDT>0123456789</SDT>
+    <DIACHI>123 Đường ABC</DIACHI>
+    <GIOITINH>Nam</GIOITINH>
+    <USERNAME>nguyenvana</USERNAME>
+    <PASSWORD>matkhau12345</PASSWORD>
+  </NHANVIEN>
+  <NHANVIEN>
+    <MANV>NV02</MANV>
+    <TENNV>Trần Thị B</TENNV>
+    <SDT>0987654321</SDT>
+    <DIACHI>456 Đường XYZ</DIACHI>
+    <GIOITINH>Nữ</GIOITINH>
+    <USERNAME>tranthib</USERNAME>
+    <PASSWORD>1234567890ab</PASSWORD>
+  </NHANVIEN>
+  <NHANVIEN>
+    <MANV>NV03</MANV>
+    <TENNV>Lê Văn C</TENNV>
+    <SDT>0912345678</SDT>
+    <DIACHI>789 Đường DEF</DIACHI>
+    <GIOITINH>Nam</GIOITINH>
+    <USERNAME>levanc</USERNAME>
+    <PASSWORD>abcdef123456</PASSWORD>
+  </NHANVIEN>
+  <NHANVIEN>
+    <MANV>NV04</MANV>
+    <TENNV>Phạm Thị D</TENNV>
+    <SDT>0909090909</SDT>
+    <DIACHI>321 Đường GHI</DIACHI>
+    <GIOITINH>Nữ</GIOITINH>
+    <USERNAME>phamthid</USERNAME>
+    <PASSWORD>pass123456789</PASSWORD>
+  </NHANVIEN>
+  <NHANVIEN>
+    <MANV>NV05</MANV>
+    <TENNV>Đỗ Văn E</TENNV>
+    <SDT>0939393939</SDT>
+    <DIACHI>654 Đường JKL</DIACHI>
+    <GIOITINH>Nam</GIOITINH>
+    <USERNAME>dovane</USERNAME>
+    <PASSWORD>securepass2023</PASSWORD>
+  </NHANVIEN>
+
+  <!-- Bảng MON -->
+  <MON>
+    <MAMON>M01</MAMON>
+    <TENMON>Phở bò</TENMON>
+    <GIA>45000</GIA>
+    <HINHANH>pho.jpg</HINHANH>
+  </MON>
+  <MON>
+    <MAMON>M02</MAMON>
+    <TENMON>Bún chả</TENMON>
+    <GIA>40000</GIA>
+    <HINHANH>buncha.jpg</HINHANH>
+  </MON>
+  <MON>
+    <MAMON>M03</MAMON>
+    <TENMON>Cơm tấm</TENMON>
+    <GIA>35000</GIA>
+    <HINHANH>comtam.jpg</HINHANH>
+  </MON>
+  <MON>
+    <MAMON>M04</MAMON>
+    <TENMON>Bánh mì</TENMON>
+    <GIA>25000</GIA>
+    <HINHANH>banhmi.jpg</HINHANH>
+  </MON>
+  <MON>
+    <MAMON>M05</MAMON>
+    <TENMON>Cháo gà</TENMON>
+    <GIA>30000</GIA>
+    <HINHANH>chaoga.jpg</HINHANH>
+  </MON>
+
+  <!-- Bảng HOADON -->
+  <HOADON>
+    <SOHD>HD01</SOHD>
+    <NGAYLAP>2025-09-30</NGAYLAP>
+    <TONGTIEN>75000</TONGTIEN>
+    <TENBAN>B01</TENBAN>
+    <MANV>NV01</MANV>
+  </HOADON>
+  <HOADON>
+    <SOHD>HD02</SOHD>
+    <NGAYLAP>2025-09-30</NGAYLAP>
+    <TONGTIEN>40000</TONGTIEN>
+    <TENBAN>B02</TENBAN>
+    <MANV>NV02</MANV>
+  </HOADON>
+  <HOADON>
+    <SOHD>HD03</SOHD>
+    <NGAYLAP>2025-09-30</NGAYLAP>
+    <TONGTIEN>35000</TONGTIEN>
+    <TENBAN>B03</TENBAN>
+    <MANV>NV03</MANV>
+  </HOADON>
+  <HOADON>
+    <SOHD>HD04</SOHD>
+    <NGAYLAP>2025-09-30</NGAYLAP>
+    <TONGTIEN>25000</TONGTIEN>
+    <TENBAN>B04</TENBAN>
+    <MANV>NV04</MANV>
+  </HOADON>
+  <HOADON>
+    <SOHD>HD05</SOHD>
+    <NGAYLAP>2025-09-30</NGAYLAP>
+    <TONGTIEN>30000</TONGTIEN>
+    <TENBAN>B05</TENBAN>
+    <MANV>NV05</MANV>
+  </HOADON>
+
+  <!-- Bảng CTHD -->
+  <CTHD>
+    <SOHD>HD01</SOHD>
+    <MAMON>M01</MAMON>
+    <SOLUONG>2</SOLUONG>
+  </CTHD>
+  <CTHD>
+    <SOHD>HD02</SOHD>
+    <MAMON>M02</MAMON>
+    <SOLUONG>1</SOLUONG>
+  </CTHD>
+  <CTHD>
+    <SOHD>HD03</SOHD>
+    <MAMON>M03</MAMON>
+    <SOLUONG>1</SOLUONG>
+  </CTHD>
+  <CTHD>
+    <SOHD>HD04</SOHD>
+    <MAMON>M04</MAMON>
+    <SOLUONG>1</SOLUONG>
+  </CTHD>
+  <CTHD>
+    <SOHD>HD05</SOHD>
+    <MAMON>M05</MAMON>
+    <SOLUONG>1</SOLUONG>
+  </CTHD>
+
+</QUANAN>

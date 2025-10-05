@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.quanan.vn"
+           xmlns="http://www.quanan.vn"
+           elementFormDefault="qualified">
+
+  <!-- Root element -->
+  <xs:element name="QUANAN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="BAN" maxOccurs="unbounded"/>
+        <xs:element name="NHANVIEN" maxOccurs="unbounded"/>
+        <xs:element name="MON" maxOccurs="unbounded"/>
+        <xs:element name="HOADON" maxOccurs="unbounded"/>
+        <xs:element name="CTHD" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+
+    <!-- Khóa chính -->
+    <xs:unique name="PK_BAN">
+      <xs:selector xpath="BAN"/>
+      <xs:field xpath="TENBAN"/>
+    </xs:unique>
+
+    <xs:unique name="PK_NV">
+      <xs:selector xpath="NHANVIEN"/>
+      <xs:field xpath="MANV"/>
+    </xs:unique>
+
+    <xs:unique name="PK_MON">
+      <xs:selector xpath="MON"/>
+      <xs:field xpath="MAMON"/>
+    </xs:unique>
+
+    <xs:unique name="PK_HD">
+      <xs:selector xpath="HOADON"/>
+      <xs:field xpath="SOHD"/>
+    </xs:unique>
+
+    <!-- Khóa ngoại -->
+    <xs:keyref name="FK_HD_BAN" refer="PK_BAN">
+      <xs:selector xpath="HOADON"/>
+      <xs:field xpath="TENBAN"/>
+    </xs:keyref>
+
+    <xs:keyref name="FK_HD_NV" refer="PK_NV">
+      <xs:selector xpath="HOADON"/>
+      <xs:field xpath="MANV"/>
+    </xs:keyref>
+
+    <xs:keyref name="FK_CTHD_HD" refer="PK_HD">
+      <xs:selector xpath="CTHD"/>
+      <xs:field xpath="SOHD"/>
+    </xs:keyref>
+
+    <xs:keyref name="FK_CTHD_MON" refer="PK_MON">
+      <xs:selector xpath="CTHD"/>
+      <xs:field xpath="MAMON"/>
+    </xs:keyref>
+  </xs:element>
+
+  <!-- BAN -->
+  <xs:element name="BAN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TENBAN" type="xs:string"/>
+        <xs:element name="SOBAN" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- NHANVIEN -->
+  <xs:element name="NHANVIEN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MANV" type="xs:string"/>
+        <xs:element name="TENNV" type="xs:string"/>
+        <xs:element name="SDT" type="xs:string"/>
+        <xs:element name="DIACHI" type="xs:string"/>
+        <xs:element name="GIOITINH" type="xs:string"/>
+        <xs:element name="USERNAME">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="6"/>
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="PASSWORD">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="10"/>
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- MON -->
+  <xs:element name="MON">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MAMON" type="xs:string"/>
+        <xs:element name="TENMON" type="xs:string"/>
+        <xs:element name="GIA" type="xs:float"/>
+        <xs:element name="HINHANH" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- HOADON -->
+  <xs:element name="HOADON">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SOHD" type="xs:string"/>
+        <xs:element name="NGAYLAP" type="xs:date"/>
+        <xs:element name="TONGTIEN" type="xs:float"/>
+        <xs:element name="TENBAN" type="xs:string"/>
+        <xs:element name="MANV" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- CTHD -->
+  <xs:element name="CTHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SOHD" type="xs:string"/>
+        <xs:element name="MAMON" type="xs:string"/>
+        <xs:element name="SOLUONG" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,95 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Kiểu dùng chung cho MA và TEN -->
+  <xs:simpleType name="maType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tenType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Ràng buộc tên khoa chỉ chứa a-z -->
+  <xs:simpleType name="tenKhoaType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Ràng buộc số điện thoại bắt đầu bằng 0 và theo sau là 9 số -->
+  <xs:simpleType name="sdtType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="0[0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="DSSV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="KHOA" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MA" type="maType"/>
+              <xs:element name="TEN" type="tenKhoaType"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="LOP" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MA" type="maType"/>
+              <xs:element name="TEN" type="tenType"/>
+              <xs:element name="KHOA_REF" type="maType"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="SINHVIEN" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MSSV" type="maType"/>
+              <xs:element name="HOTEN" type="xs:string"/>
+              <xs:element name="EMAIL" type="xs:string"/>
+              <xs:element name="DIACHI" type="xs:string"/>
+              <xs:element name="SDT" type="sdtType"/>
+              <xs:element name="LOP_REF" type="maType"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <!-- Khóa chính -->
+    <xs:key name="KhoaKey">
+      <xs:selector xpath="KHOA"/>
+      <xs:field xpath="MA"/>
+    </xs:key>
+
+    <xs:key name="LopKey">
+      <xs:selector xpath="LOP"/>
+      <xs:field xpath="MA"/>
+    </xs:key>
+
+    <xs:key name="SinhVienKey">
+      <xs:selector xpath="SINHVIEN"/>
+      <xs:field xpath="MSSV"/>
+    </xs:key>
+
+    <!-- Khóa ngoại -->
+    <xs:keyref name="LopToKhoa" refer="KhoaKey">
+      <xs:selector xpath="LOP"/>
+      <xs:field xpath="KHOA_REF"/>
+    </xs:keyref>
+
+    <xs:keyref name="SVToLop" refer="LopKey">
+      <xs:selector xpath="SINHVIEN"/>
+      <xs:field xpath="LOP_REF"/>
+    </xs:keyref>
+
+  </xs:element>
+</xs:schema>
